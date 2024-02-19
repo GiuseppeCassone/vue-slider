@@ -10,7 +10,6 @@ createApp({
         return {
 
             activeSlideIndex: 0,
-            autoplayInterval: null,
 
              slides: [
                 {
@@ -67,10 +66,14 @@ createApp({
 
         // Funzione che fa andare avanti in automatico con intervallo di 3 secondi 
         startAutoplay(){
-            setInterval(() => {
-                this.nextSlide();
+            this.goAutoplay = setInterval(() => {
+                    this.nextSlide();
             }, 3000);
-        }
+        },
+
+        stopAutoplay(){
+            clearInterval(this.goAutoplay);
+        },
 
 
     },
