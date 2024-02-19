@@ -1,3 +1,8 @@
+// Bonus:
+// al click su una thumb, visualizzare in grande l'immagine corrispondente
+// applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
+// quando il cursore va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce
+
 const { createApp } = Vue;
 
 createApp({
@@ -38,6 +43,7 @@ createApp({
 
     },
     methods: {
+        // Funzione che permette di passare alla slide successiva e una volta arrivata al numero massimo torna alla prima
         nextSlide(){
             this.activeSlideIndex++;
             if(this.activeSlideIndex >= this.slides.length){
@@ -45,12 +51,18 @@ createApp({
             }
         },
 
+        // Funzione che permette di passare alla slide precedente e una volta arrivata al numero massimo torna all'ultima
         prevSlide(){
             this.activeSlideIndex--;
             if(this.activeSlideIndex < 0){
                 this.activeSlideIndex = this.slides.length - 1;
             }
         },
+
+        // Funzione che permette di visualizzare, al click della thumb, la slide corrispettiva 
+        changeSlide(index){
+            this.activeSlideIndex = index;
+        }
 
 
     }
