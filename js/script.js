@@ -71,6 +71,7 @@ createApp({
             }, 3000);
         },
 
+        // Funzione che blocca l'autoplay con il mouse hover
         stopAutoplay(){
             clearInterval(this.goAutoplay);
         },
