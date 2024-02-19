@@ -43,7 +43,14 @@ createApp({
             if(this.activeSlideIndex >= this.slides.length){
                 this.activeSlideIndex = 0;
             }
-        }
+        },
+
+        prevSlide(){
+            this.activeSlideIndex--;
+            if(this.activeSlideIndex < 0){
+                this.activeSlideIndex = this.slides.length - 1;
+            }
+        },
 
 
     }
